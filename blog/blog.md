@@ -89,7 +89,29 @@ Now, let's briefly explain the contents of the YAML files provided in the script
 
 4. `04_argocd.yaml`: Defines the ArgoCD configuration in the `policies` namespace.
 
+#Note :
+
+Ensure that you use the recent version of PolicyGenerator (so upgrade those lines e.g. v2.9.0 if you update RHACM)
+
+```
+    initContainers:
+    - args:
+      - cp /etc/kustomize/plugin/policy.open-cluster-management.io/v1/policygenerator/PolicyGenerator
+        /policy-generator/PolicyGenerator
+      command:
+      - sh
+      - -c
+      image: registry.redhat.io/rhacm2/multicluster-operators-subscription-rhel8:v2.9.0
+      name: policy-generator-install
+      volumeMounts:
+      - mountPath: /policy-generator
+        name: policy-generator
+```
+
 5. `05_appproject.yaml`: Configures an ArgoCD application for deploying the PolicySet, pointing to the `ocp-best-practices-policyset`.
+
+Here you could also make some custom rbac-setting like excluding certain objects or enforce manual sync.....
+
 
 6. `06_applications.yaml`: Sets up an ArgoCD application project.
 
