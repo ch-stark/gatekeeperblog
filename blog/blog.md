@@ -121,7 +121,9 @@ In this tutorial, we will perform the following tasks:
    - Verification of Gatekeeper's operational status.
    - Installation of the Gatekeeper library.
    - Installation of Custom Constraint Templates.
-   - Installation of a Custom Constraint.
+   - Installation of a Custom Constraints.
+   - checks depending on the Kubernetes-Version
+   - Policies to monitor also Admission-Events
    - Placement of Gatekeeper files distributed to clusters with specific labels. Gatekeeper Operator and Constraints will be installed on ManagedClusters with the label 'gatekeeper=true.'
 
 ## Central Configuration
