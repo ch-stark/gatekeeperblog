@@ -1,6 +1,6 @@
 ## Setting Up RHACM-Policies with ArgoCD for OpenShift Best Practices and Gatekeeper
 
-Welcome to this tutorial on configuring ArgoCD to deploy Policies for OpenShift best practices and Gatekeeper using Red Hat Advanced Cluster Management (RHACM).
+Welcome to this `tutorial` on configuring ArgoCD to deploy Policies for OpenShift best practices and Gatekeeper using Red Hat Advanced Cluster Management (RHACM).
 
 In this guide, we'll walk you through the steps to set up and manage policies efficiently. 
 
@@ -284,6 +284,8 @@ By following these steps, you will successfully deploy ACM Gatekeeper Integratio
 
 By deploying the two PolicySets you get a very elegant way to setup Compliance-As-Code and can focus now on making further modifications which match 
 your goals.
+
+From our experience we know that sometimes the `Why shall I do this` and `What goals can I achieve` and not 100% clear, reach out to us for any deeper discussion.
 
 
 
