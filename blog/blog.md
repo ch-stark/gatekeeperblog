@@ -100,7 +100,7 @@ At the end of the setup, you'll find the deployed policies in the RHACM Governan
 ![PolicySet-View](images/policysetview.png)
 ![ArgoCD-View](images/argocdview.png)
 
-# Tutorial: Deploying ACM Gatekeeper Integration with ArgoCD
+## Tutorial: Deploying ACM Gatekeeper Integration with ArgoCD
 
 Welcome to the second part of our tutorial series! In this tutorial, we will walk you through the process of creating a new application to deploy ACM Gatekeeper-Operator, Gatekeeper-Constraints, and Constraint Templates. We will also demonstrate the integration with ArgoCD.
 
