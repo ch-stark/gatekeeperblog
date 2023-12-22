@@ -17,7 +17,7 @@ Before we dive into the tutorial, make sure you have the following prerequisites
 3. download this repository and execute the provided script 
 ## Setup
 
-To simplify the setup process, we've provided a script that automates the deployment of necessary Kubernetes resources for you. Here's how you can set up ArgoCD for deploying Policies:
+To simplify the setup process, we've provided a script that automates the deployment of necessary Kubernetes resources for you. [Here's](https://github.com/ch-stark/policies-argocd-tutorial/tree/main/files/tutorial1_openshiftbestpractices) how you can set up ArgoCD for deploying Policies:
 
 1. Create a new file named `setup-argocd.sh` and paste the provided script into it.
 
@@ -147,6 +147,33 @@ In this tutorial, we will perform the following tasks:
    - Installation of Mutation-Rules
    - checks depending on the Kubernetes-Version
    - Policies to monitor also Admission-Events
+     ```
+     ---
+apiVersion: policy.open-cluster-management.io/v1
+kind: ConfigurationPolicy
+metadata:
+  name: checkadmissionevents
+spec:
+  remediationAction: enforce
+  severity: high
+  object-templates-raw: |
+    ## get all of the ConstraintTemplates so we know what kinds of constrainsts are possible
+    {{- range $ctemp := (lookup "templates.gatekeeper.sh/v1beta1" "ConstraintTemplate" "" "").items }}
+      {{- range $constrnt :=  (lookup "constraints.gatekeeper.sh/v1beta1" $ctemp.spec.crd.spec.names.kind "" "").items }}
+      - complianceType: mustnothave
+        objectDefinition:
+          apiVersion: v1
+          kind: Event
+          metadata:
+            namespace: openshift-gatekeeper-system
+            annotations:
+              constraint_action: deny
+              constraint_kind: {{ $constrnt.kind }}
+              constraint_name: {{ $constrnt.metadata.name }}
+              event_type: violation
+        {{- end }}
+      {{- end }}
+      ```
    - Placement of Gatekeeper files distributed to clusters with specific labels. Gatekeeper Operator and Constraints will be installed on ManagedClusters with the label 'gatekeeper=true.'
 
 ## Central Configuration
