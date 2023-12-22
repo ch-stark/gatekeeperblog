@@ -141,9 +141,9 @@ In this tutorial, we will perform the following tasks:
    - Installation of Gatekeeper.
    - Configuration of Gatekeeper instances and exclusion of namespaces.
    - Verification of Gatekeeper's operational status.
-   - Installation of the Gatekeeper library.
+   - Installation of the Contraint-Templates of the [Gatekeeper library](https://github.com/open-policy-agent/gatekeeper-library).
    - Installation of Custom Constraint Templates.
-   - Installation of a Custom Constraints.
+   - Installation of a Custom Constraints (examples can be found at gatekeeper library).
    - Installation of Mutation-Rules
    - checks depending on the Kubernetes-Version
    - Policies to monitor also Admission-Events
@@ -159,8 +159,7 @@ All of the configurations discussed in this tutorial are managed though PolicyGe
 
 One important aspect to note is the `informGatekeeperPolicies` setting. When set to `true`, the policy expander will wrap everything in ConfigurationPolicies. Otherwise, it will leave it as a Gatekeeper manifest.
 
-Now, let's dive into the step-by-step instructions for deploying ACM Gatekeeper Integration with ArgoCD:
-
+Now, let's dive into the `step-by-step` instructions for deploying ACM Gatekeeper Integration with ArgoCD:
 
 To setup the tutorial just execute the folowing files again the RHACM 2.9 Hub-Cluster
 
@@ -186,6 +185,7 @@ See a Deployment which failed because of various checks
 
 The first check failed because of wrong replicas number:  ![Request Denied](images/requestdenied.png)
 
+After modifying the replicas the check pases but other errors will be reported:
 ```
 apiVersion: apps/v1
 kind: Deployment
