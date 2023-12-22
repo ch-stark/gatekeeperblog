@@ -133,8 +133,8 @@ Before we begin, please make sure you have completed the setup-gitops folder as 
 
 In this tutorial, we will perform the following tasks:
 
-1. Create an ArgoCD Instance on the Hub-Cluster in a namespace called 'policies.'
-2. Create ACM-Policies that wrap Gatekeeper Policies, establishing a link between ACM and Gatekeeper.
+1. Create an ArgoCD Instance on the Hub-Cluster in a namespace called `policies`.
+2. Create ACM-Policies that wrap Gatekeeper Policies, establishing a link between ACM and Gatekeeper. This is all done by PolicyGenerator
 3. Demonstrate various features, including:
    - Dependency between policies.
    - Installation of Gatekeeper.
@@ -177,7 +177,7 @@ spec:
 
 ## Central Configuration
 
-All of the configurations discussed in this tutorial are managed though PolicyGenerator. You can find all the options it provides this file at the following URL:
+All of the configurations discussed in this tutorial are managed though PolicyGenerator. You can find all the options it provides in this file at the following URL:
 
 [Policy Generator Plugin Configuration](https://github.com/stolostron/policy-generator-plugin/blob/main/docs/policygenerator-reference.yaml)
 
