@@ -90,9 +90,7 @@ Now, let's briefly explain the contents of the YAML files provided in the script
 
 4. `04_argocd.yaml`: Defines the ArgoCD configuration in the `policies` namespace.
 
-#Note :
-
-Ensure that you use the recent version of PolicyGenerator (so upgrade those lines e.g. v2.9.0 if you update RHACM)
+*Note: Ensure that you use the recent version of PolicyGenerator (so upgrade those lines e.g. v2.9.0 if you update RHACM)*
 
 ```
     initContainers:
