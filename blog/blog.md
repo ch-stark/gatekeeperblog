@@ -146,8 +146,9 @@ In this tutorial, we will perform the following tasks:
    - Installation of Mutation-Rules
    - checks depending on the Kubernetes-Version
    - Policies to monitor also Admission-Events
-     ```
-     ---
+
+```
+---
 apiVersion: policy.open-cluster-management.io/v1
 kind: ConfigurationPolicy
 metadata:
@@ -172,7 +173,7 @@ spec:
               event_type: violation
         {{- end }}
       {{- end }}
-      ```
+```
    - Placement of Gatekeeper files distributed to clusters with specific labels. Gatekeeper Operator and Constraints will be installed on ManagedClusters with the label 'gatekeeper=true.'
 
 ## Central Configuration
@@ -291,7 +292,6 @@ status:
   observedGeneration: 1
   unavailableReplicas: 3
 ```
-
 See a deployment which passes the checks:
 
 ```
@@ -328,17 +328,10 @@ spec:
             ephemeral-storage: "100Mi"
 ```
 
-
 ## Conclusion
 
 By following these steps, you will successfully deploy ACM Gatekeeper Integration with ArgoCD. This integration allows you to manage policies effectively and ensure the compliance of your Kubernetes clusters
 
 By deploying the two PolicySets you get a very elegant way to setup `Compliance-As-Code` and can focus now on making further modifications which match your goals.
 
-From our experience we know that sometimes the `Why shall I do this` and `What goals can I achieve` are not 100% clear, reach out to us for any deeper discussion.
-
-
-
-
-
-
+From our experience we know that sometimes the `Why shall I do this` and `What goals can I achieve` `How does it relate to other Security-Features` are not 100% clear, reach out to us for any deeper discussion.
