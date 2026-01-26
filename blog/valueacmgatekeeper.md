@@ -2,7 +2,7 @@
 
 Red Hat Advanced Cluster Management (RHACM) integrates with **OPA Gatekeeper** to provide robust admission control, audit capabilities, and policy enforcement across a multi-cluster fleet. It functions as a core component of RHACM’s "defense-in-depth" governance framework.
 
-[Image of RHACM governance architecture with OPA Gatekeeper]
+![RHACM and Gatekeeper Architecture](https://raw.githubusercontent.com/open-cluster-management-io/policy-collection/main/docs/images/gatekeeper-integration.png)
 
 ---
 
