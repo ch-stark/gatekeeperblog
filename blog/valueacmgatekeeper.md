@@ -2,7 +2,6 @@
 
 Red Hat Advanced Cluster Management (RHACM) integrates with **OPA Gatekeeper** to provide robust admission control, audit capabilities, and policy enforcement across a multi-cluster fleet. It functions as a core component of RHACM’s "defense-in-depth" governance framework.
 
----
 
 ## 1. Automated Installation and Lifecycle Management
 RHACM simplifies the deployment and maintenance of Gatekeeper infrastructure across all managed clusters.
@@ -26,7 +25,6 @@ RHACM intelligently synchronizes its remediation intent with Gatekeeper’s inte
 | **Inform** | `warn` | Violations are logged/reported but not blocked. |
 | **Enforce** | `deny` | Non-compliant API requests are actively blocked. |
 
----
 
 ## 4. Centralized Observability and Reporting
 RHACM aggregates distributed Gatekeeper data into a "single pane of glass" for compliance monitoring.
